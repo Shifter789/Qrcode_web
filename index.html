@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head> 
+
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0"
+        
+        <script src="jquery.min.js"></script>
+        <script src="qrcode.js"></script>
+
+        <link rel = "stylesheet" href = "style.css">
+
+    </head>
+
+    <body>
+
+
+<input id="text" type="text" value="https://www.w3schools.com/html/html_div.asp" />
+<div id="qrcode"></div>
+
+    <script type="text/javascript">
+var qrcode = new QRCode("qrcode");
+
+function makeCode () {		
+	var elText = document.getElementById("text");
+	
+	if (!elText.value) {
+		alert("Input a text");
+		elText.focus();
+		return;
+	}
+	
+	qrcode.makeCode(elText.value);
+}
+
+makeCode();
+
+$("#text")
+on("input", function () {
+    makeCode();
+});
+
+</script>
+
+</div>
+
+
+
+
+</html>

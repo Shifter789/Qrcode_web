@@ -1,0 +1,14 @@
+
+body {
+    
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    background-color: rgb(81, 255, 0);
+
+
+}
+
+#qrcode {
+  width:160px;
+  height:160px;
+  margin-top:15px;
+}
