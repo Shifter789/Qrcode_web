@@ -16,35 +16,35 @@
     <body>
 
 
-<input id="text" type="text" placeholder="Type something:">
+        <input id="text" type="text" placeholder="Type what you want a qr code for:">
 
-<div id="qrcode"></div>
+        <div id="qrcode"></div>
 
-<script type="text/javascript">
+        <script type="text/javascript">
 
-    var qrcode = new QRCode("qrcode");
+            var qrcode = new QRCode("qrcode");
 
-    function makeCode () {		
-        var elText = document.getElementById("text");
-        
-        if (!elText.value) {
-            return;
-        }
-        
-        qrcode.makeCode(elText.value);
-    }
+            function makeCode () {		
+                var elText = document.getElementById("text");
+                
+                if (!elText.value) {
+                    return;
+                }
+                
+                qrcode.makeCode(elText.value);
+            }
 
-    makeCode();
+            makeCode();
 
-    var input = document.getElementById("text")
+            var input = document.getElementById("text")
 
-    input.addEventListener("input", function () {
+            input.addEventListener("input", function () {
 
-        makeCode();
+                makeCode();
 
-    });
+            });
 
-</script>
+        </script>
 
 
 
