@@ -4,9 +4,9 @@
     <head> 
 
         <meta charset = "UTF-8">
-        <meta name = "viewport" content = "width=device-width, initial-scale=1.0"
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
         
-        <script src="jquery.min.js"></script>
+        
         <script src="qrcode.js"></script>
 
         <link rel = "stylesheet" href = "style.css">
@@ -16,35 +16,35 @@
     <body>
 
 
-<input id="text" type="text" value="https://www.w3schools.com/html/html_div.asp" />
+<input id="text" type="text" placeholder="Type something:">
+
 <div id="qrcode"></div>
 
-    <script type="text/javascript">
-var qrcode = new QRCode("qrcode");
+<script type="text/javascript">
 
-function makeCode () {		
-	var elText = document.getElementById("text");
-	
-	if (!elText.value) {
-		alert("Input a text");
-		elText.focus();
-		return;
-	}
-	
-	qrcode.makeCode(elText.value);
-}
+    var qrcode = new QRCode("qrcode");
 
-makeCode();
+    function makeCode () {		
+        var elText = document.getElementById("text");
+        
+        if (!elText.value) {
+            return;
+        }
+        
+        qrcode.makeCode(elText.value);
+    }
 
-$("#text")
-on("input", function () {
     makeCode();
-});
+
+    var input = document.getElementById("text")
+
+    input.addEventListener("input", function () {
+
+        makeCode();
+
+    });
 
 </script>
-
-</div>
-
 
 
 
